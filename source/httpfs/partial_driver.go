@@ -8,7 +8,7 @@ import (
 	"path"
 	"strconv"
 
-	"github.com/golang-migrate/migrate/v4/source"
+	"github.com/KSerik/migrate/source"
 )
 
 // PartialDriver is a helper service for creating new source drivers working with

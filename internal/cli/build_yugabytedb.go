@@ -4,5 +4,5 @@
 package cli
 
 import (
-	_ "github.com/golang-migrate/migrate/v4/database/yugabytedb"
+	_ "github.com/KSerik/migrate/database/yugabytedb"
 )
