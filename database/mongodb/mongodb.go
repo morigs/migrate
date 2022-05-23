@@ -3,8 +3,8 @@ package mongodb
 import (
 	"context"
 	"fmt"
+	"github.com/KSerik/migrate/database"
 	"github.com/cenkalti/backoff/v4"
-	"github.com/golang-migrate/migrate/v4/database"
 	"github.com/hashicorp/go-multierror"
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/mongo"

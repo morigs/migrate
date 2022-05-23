@@ -11,9 +11,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/KSerik/migrate/database"
+	"github.com/KSerik/migrate/database/multistmt"
 	"github.com/gocql/gocql"
-	"github.com/golang-migrate/migrate/v4/database"
-	"github.com/golang-migrate/migrate/v4/database/multistmt"
 	"github.com/hashicorp/go-multierror"
 )
 

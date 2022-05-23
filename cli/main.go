@@ -1,6 +1,6 @@
 package main
 
-import "github.com/golang-migrate/migrate/v4/internal/cli"
+import "github.com/KSerik/migrate/internal/cli"
 
 // Deprecated, please use cmd/migrate
 func main() {

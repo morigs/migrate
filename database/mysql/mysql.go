@@ -16,8 +16,8 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/KSerik/migrate/database"
 	"github.com/go-sql-driver/mysql"
-	"github.com/golang-migrate/migrate/v4/database"
 	"github.com/hashicorp/go-multierror"
 )
 

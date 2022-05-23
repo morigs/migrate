@@ -6,9 +6,9 @@ import (
 	"strings"
 	"testing"
 
+	st "github.com/KSerik/migrate/source/testing"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/service/s3"
-	st "github.com/golang-migrate/migrate/v4/source/testing"
 	"github.com/stretchr/testify/assert"
 )
 

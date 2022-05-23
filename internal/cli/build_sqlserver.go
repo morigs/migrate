@@ -4,5 +4,5 @@
 package cli
 
 import (
-	_ "github.com/golang-migrate/migrate/v4/database/sqlserver"
+	_ "github.com/KSerik/migrate/database/sqlserver"
 )

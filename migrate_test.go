@@ -12,9 +12,9 @@ import (
 )
 
 import (
-	dStub "github.com/golang-migrate/migrate/v4/database/stub"
-	"github.com/golang-migrate/migrate/v4/source"
-	sStub "github.com/golang-migrate/migrate/v4/source/stub"
+	dStub "github.com/KSerik/migrate/database/stub"
+	"github.com/KSerik/migrate/source"
+	sStub "github.com/KSerik/migrate/source/stub"
 )
 
 // sourceStubMigrations hold the following migrations:
