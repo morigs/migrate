@@ -409,19 +409,18 @@ func ExecuteInTx(ctx context.Context, db *sql.DB, opts *sql.TxOptions, fn func(t
 	}
 }
 
-func errIsRetryable(err error) bool {
-	pqErr := pq.Error{}
-	if !errors.As(err, &pqErr) {
-		return false
+func errIsRetryable(err error) bool {	
+	if err, ok := err.(*pq.Error); ok {
+		code := string(pqErr.Code)
+
+		// Assume that it's safe to retry 08006 and XX000 because we check for lock existence
+		// before creating and lock ID is primary key. Version field in migrations table is primary key too
+		// and delete all versions is an idempotend operation.
+		return code == "40001" || // Serialization error (optimistic locking conflict)
+			code == "40P01" || // Deadlock
+			code == "08006" || // Connection failure (node down, need to reconnect)
+			code == "XX000" // Internal error (may happen during HA)
 	}
 
-	code := string(pqErr.Code)
-
-	// Assume that it's safe to retry 08006 and XX000 because we check for lock existence
-	// before creating and lock ID is primary key. Version field in migrations table is primary key too
-	// and delete all versions is an idempotend operation.
-	return code == "40001" || // Serialization error (optimistic locking conflict)
-		code == "40P01" || // Deadlock
-		code == "08006" || // Connection failure (node down, need to reconnect)
-		code == "XX000" // Internal error (may happen during HA)
+	return false
 }
