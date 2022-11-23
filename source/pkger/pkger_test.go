@@ -6,10 +6,10 @@ import (
 	"testing"
 
 	"github.com/gobuffalo/here"
-	st "github.com/golang-migrate/migrate/v4/source/testing"
 	"github.com/markbates/pkger"
 	"github.com/markbates/pkger/pkging"
 	"github.com/markbates/pkger/pkging/mem"
+	st "github.com/morigs/migrate/v4/source/testing"
 )
 
 func Test(t *testing.T) {

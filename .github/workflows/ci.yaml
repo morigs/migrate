@@ -88,15 +88,15 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: gem install package_cloud
-      - run: package_cloud push golang-migrate/migrate/ubuntu/bionic dist/migrate.linux-amd64.deb
+      - run: package_cloud push morigs/migrate/ubuntu/bionic dist/migrate.linux-amd64.deb
         env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
-      - run: package_cloud push golang-migrate/migrate/ubuntu/focal dist/migrate.linux-amd64.deb
+      - run: package_cloud push morigs/migrate/ubuntu/focal dist/migrate.linux-amd64.deb
         env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
-      - run: package_cloud push golang-migrate/migrate/debian/buster dist/migrate.linux-amd64.deb
+      - run: package_cloud push morigs/migrate/debian/buster dist/migrate.linux-amd64.deb
         env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}
-      - run: package_cloud push golang-migrate/migrate/debian/bullseye dist/migrate.linux-amd64.deb
+      - run: package_cloud push morigs/migrate/debian/bullseye dist/migrate.linux-amd64.deb
         env:
           PACKAGECLOUD_TOKEN: ${{ secrets.PACKAGECLOUD_TOKEN }}

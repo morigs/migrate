@@ -19,7 +19,7 @@ FROM alpine:3.16
 
 RUN apk add --no-cache ca-certificates
 
-COPY --from=builder /go/src/github.com/golang-migrate/migrate/build/migrate.linux-386 /usr/local/bin/migrate
+COPY --from=builder /go/src/github.com/morigs/migrate/build/migrate.linux-386 /usr/local/bin/migrate
 RUN ln -s /usr/local/bin/migrate /migrate
 
 ENTRYPOINT ["migrate"]

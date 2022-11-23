@@ -12,8 +12,8 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/golang-migrate/migrate/v4/source"
 	"github.com/google/go-github/v39/github"
+	"github.com/morigs/migrate/v4/source"
 )
 
 func init() {

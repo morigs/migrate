@@ -12,7 +12,7 @@ Once you create your files, you should fill them.
 
 **IMPORTANT:** In a project developed by more than one person there is a chance of migrations inconsistency - e.g. two developers can create conflicting migrations, and the developer that created their migration later gets it merged to the repository first.
 Developers and Teams should keep an eye on such cases (especially during code review).
-[Here](https://github.com/golang-migrate/migrate/issues/179#issuecomment-475821264) is the issue summary if you would like to read more.
+[Here](https://github.com/morigs/migrate/issues/179#issuecomment-475821264) is the issue summary if you would like to read more.
 
 Consider making your migrations idempotent - we can run the same sql code twice in a row with the same result. This makes our migrations more robust. On the other hand, it causes slightly less control over database schema - e.g. let's say you forgot to drop the table in down migration. You run down migration - the table is still there. When you run up migration again - `CREATE TABLE` would return an error, helping you find an issue in down migration, while `CREATE TABLE IF NOT EXISTS` would not. Use those conditions wisely.
 
@@ -42,7 +42,7 @@ migrate -path PATH_TO_YOUR_MIGRATIONS -database YOUR_DATABASE_URL force VERSION
 ```
 Once you force the version and your migration was fixed, your database is 'clean' again and you can proceed with your migrations.
 
-For details and example of usage see [this comment](https://github.com/golang-migrate/migrate/issues/282#issuecomment-530743258).
+For details and example of usage see [this comment](https://github.com/morigs/migrate/issues/282#issuecomment-530743258).
 
 ## Further reading:
 - [PostgreSQL tutorial](database/postgres/TUTORIAL.md)

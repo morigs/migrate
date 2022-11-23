@@ -11,9 +11,9 @@ import (
 
 	"go.uber.org/atomic"
 
-	"github.com/golang-migrate/migrate/v4/database"
 	"github.com/hashicorp/go-multierror"
 	"github.com/lib/pq"
+	"github.com/morigs/migrate/v4/database"
 	sf "github.com/snowflakedb/gosnowflake"
 )
 
@@ -256,7 +256,7 @@ func (p *Snowflake) SetVersion(version int, dirty bool) error {
 
 	// Also re-write the schema version for nil dirty versions to prevent
 	// empty schema version for failed down migration on the first migration
-	// See: https://github.com/golang-migrate/migrate/issues/330
+	// See: https://github.com/morigs/migrate/issues/330
 	if version >= 0 || (version == database.NilVersion && dirty) {
 		query = `INSERT INTO "` + p.config.MigrationsTable + `" (version,
 				dirty) VALUES (` + strconv.FormatInt(int64(version), 10) + `,

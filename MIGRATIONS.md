@@ -51,7 +51,7 @@ If your database does not support comments, then deleting the migration file wil
 Note, an actual empty file (e.g. a 0 byte file) may cause issues with your database since migrate
 will attempt to run an empty query. In this case, deleting the migration file will also work.
 For the rational of this behavior see:
-[#244 (comment)](https://github.com/golang-migrate/migrate/issues/244#issuecomment-510758270)
+[#244 (comment)](https://github.com/morigs/migrate/issues/244#issuecomment-510758270)
 
 ## Migration Content Format
 

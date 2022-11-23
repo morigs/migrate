@@ -12,10 +12,10 @@ import (
 	"go.uber.org/atomic"
 
 	"github.com/Azure/go-autorest/autorest/adal"
-	"github.com/golang-migrate/migrate/v4"
-	"github.com/golang-migrate/migrate/v4/database"
 	"github.com/hashicorp/go-multierror"
 	mssql "github.com/microsoft/go-mssqldb" // mssql support
+	"github.com/morigs/migrate/v4"
+	"github.com/morigs/migrate/v4/database"
 )
 
 func init() {
@@ -273,7 +273,7 @@ func (ss *SQLServer) SetVersion(version int, dirty bool) error {
 
 	// Also re-write the schema version for nil dirty versions to prevent
 	// empty schema version for failed down migration on the first migration
-	// See: https://github.com/golang-migrate/migrate/issues/330
+	// See: https://github.com/morigs/migrate/issues/330
 	if version >= 0 || (version == database.NilVersion && dirty) {
 		var dirtyBit int
 		if dirty {
